@@ -1,18 +1,30 @@
 <script src="https://use.fontawesome.com/af27afbee8.js"></script>
     <link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
-    <table class="table table-striped ">
-  <thead>
-    <tr>
-      <th scope="col">Nombre</th>
-      <th scope="col">Email</th>
-      <th scope="col">Sexo</th>
-      <th scope="col">Area</th>
-      <th scope="col">Boletin</th>
-      <th scope="col">Modificar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
+
+    <div class="container">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3>Lista de empleados</h3>
+      </div>
+
+      <div class="col-12  d-flex justify-content-end">
+        <a class="btn btn-primary" href="{{ url('/empleados/nuevoEmpleado') }}">Crear</a>
+      </div>
+
+      <div class="col-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Sexo</th>
+              <th scope="col">Area</th>
+              <th scope="col">Boletin</th>
+              <th scope="col">Modificar</th>
+              <th scope="col">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
       @foreach($data as $dat)
       @php
       if($dat->sexo == "M"){
@@ -42,7 +54,15 @@
     <input type="hidden" id="id" name="id" value="{{$dat->id}}" >
     @endforeach
   </tbody>
-</table>
+        </table>
+      </div>
+
+    </div>
+
+
+
+</div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
